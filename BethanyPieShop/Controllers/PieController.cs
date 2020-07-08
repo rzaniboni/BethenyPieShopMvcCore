@@ -16,13 +16,20 @@ namespace BethanyPieShop.Controllers {
       ViewBag.Message = "Welcome to Bethany's Pie Shop";
       ViewBag.CurrentCategory = "Cheese cakes";
 
-      var pieVM = new PiesListViewModel
-      {
+      var pieVM = new PiesListViewModel {
         CurrentCategory = "Cheese cakes",
         Pies = _pieRepository.AllPies
       };
 
       return View (pieVM); // view to show
+    }
+
+    public IActionResult Details (int id) {
+      var pie = _pieRepository.GetPieById (id);
+      if (pie == null) {
+        return NotFound ();
+      }
+      return View (pie);
     }
   }
 }
