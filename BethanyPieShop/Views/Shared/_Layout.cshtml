@@ -13,6 +13,7 @@
 <body>
   <div class="container">
 
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -38,6 +39,12 @@
         <p class="lead">
        +   <img class="img-responsive" alt="Bethany's Pie Shop'" src="~/Images/bethanylogo.png" />
         </p>
+        <address>
+    <strong>Support:</strong><email mail-to="Support"></email><br />
+    <strong>Marketing:</strong><email mail-to="Marketing"></email>
+</address>
+<banner title="Ciao" sub-title="pippo"> </banner>
+@await Component.InvokeAsync("ProdottoCard")
       </div>
       <div class="col-md-9">
         @RenderBody()
